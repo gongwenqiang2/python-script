@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-
+#hh
 def numpy_shape01():
     a=np.array([1,2,3,4])
     print a
