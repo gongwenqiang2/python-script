@@ -26,5 +26,8 @@ def numpy_shape01():
     d[0,0]=100
     print d
     print a
-
+    print "--数组的dtype属性"
+    print c.dtype
+    print np.array([1,2,3,4],dtype=float)
+    print np.array([1,2,3,4],dtype=complex)
 numpy_shape01()
