@@ -76,4 +76,14 @@ def get_ele():
     print c
     d=x[[1,5,8,6,4,7,1,6]]
     print d.reshape(2,-1)
-get_ele()
+# get_ele()
+
+def multi():
+    a=np.arange(0,60,10).reshape(-1,1)+np.arange(0,6)
+    print a
+    print "数组切片"
+    print a[0,3:5]
+    print a[4:,4:]
+    print a[:2]
+    print a[2::2,::2]
+multi()
