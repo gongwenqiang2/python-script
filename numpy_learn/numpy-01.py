@@ -78,7 +78,7 @@ def get_ele():
     print d.reshape(2,-1)
 # get_ele()
 
-def multi():
+def multi1():
     a=np.arange(0,60,10).reshape(-1,1)+np.arange(0,6)
     print a
     print "数组切片"
@@ -86,4 +86,9 @@ def multi():
     print a[4:,4:]
     print a[:2]
     print a[2::2,::2]
-multi()
+    #使用slice()函数创建切片模型
+    s=slice(None,None,2),slice(2,None)
+    print a[s]
+    #s使用numpy内置的s_对象创建切片模型
+    print np.s_[::2,2:]
+multi1()
