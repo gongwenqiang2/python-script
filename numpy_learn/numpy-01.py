@@ -135,4 +135,12 @@ def compare_learn():
     print c>d
     print np.logical_or(c==d,c>d)
     print np.any(a==b)
-compare_learn()
+# compare_learn()
+
+def broadcast_learn():
+    a=np.arange(0,60,10).reshape(-1,1)
+    print a
+    b=np.arange(0,5)
+    print b
+    print a+b
+broadcast_learn()
