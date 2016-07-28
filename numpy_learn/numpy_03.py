@@ -40,4 +40,9 @@ def np_linalg():
     print mat.dot(inv(mat))
     q,r=r(mat)
     print r
-np_linalg()
+# np_linalg()
+
+def np_random():
+    samples=np.random.normal(size=(4,4))
+    print samples
+np_random()
