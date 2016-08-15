@@ -86,9 +86,70 @@ def multi1():
     print a[4:,4:]
     print a[:2]
     print a[2::2,::2]
+<<<<<<< HEAD
     #使用slice()函数创建切片模型
     s=slice(None,None,2),slice(2,None)
     print a[s]
     #s使用numpy内置的s_对象创建切片模型
     print np.s_[::2,2:]
 multi1()
+=======
+# multi()
+
+def struct_array():
+    persontype=np.dtype({'names':['name','age','weight'],'formats':['S32','i','f']},align=True)
+    a=np.array([("zhang",32,75.5),("wang",24,65.2)],dtype=persontype)
+    print a
+    print a.dtype
+    print a.shape
+    print a[0]
+    c=a[0]
+    c['name']="li"
+    print a
+    b=a['age']
+    print b
+    b[0]=40
+    print a
+# struct_array()
+
+def ufunc_learn():
+    x=np.linspace(0,2*np.pi,10)
+    print x
+    y=np.sin(x)
+    print y
+    a=np.arange(6.0).reshape(2,3)
+    print a.item(1,2) #和a[1,2]类似
+    print type(a.item(1,2))
+    print type(a[1,2])
+# ufunc_learn()
+
+def arithmetic_learn():
+    a=np.arange(0,4)
+    b=np.arange(1,5)
+    print np.add(a,b)
+    print np.add(a,b,a)
+    print a
+    print a+b
+# arithmetic_learn()
+
+def compare_learn():
+    a=np.array([1,2,3])
+    b=np.array([3,2,1])
+    print a>=b
+    print type(a>b)
+    c=np.arange(5)
+    d=np.arange(4,-1,-1)
+    print c==d
+    print c>d
+    print np.logical_or(c==d,c>d)
+    print np.any(a==b)
+# compare_learn()
+
+def broadcast_learn():
+    a=np.arange(0,60,10).reshape(-1,1)
+    print a
+    b=np.arange(0,5)
+    print b
+    print a+b
+broadcast_learn()
+>>>>>>> 13b15588afcf4396ee9725fc8155006961a595ed
