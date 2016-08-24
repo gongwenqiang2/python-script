@@ -49,8 +49,8 @@ def get_neighbors(s_set,t_set,k):
     neighbors_cut=neighbors_df.groupby('t_index',as_index=False).apply(sort_cut_data,k=k,column='distance')
     return neighbors_cut
 
-neighbors=get_neighbors(sample_data,test_data,5)
-print neighbors[:10]
+neighbors=get_neighbors(sample_data,test_data,10)
+# print neighbors[:10]
 
 def top(df,n=1,column='pre_rank'):
     df_sorted=df.sort_values(by=column)
@@ -67,7 +67,7 @@ pre_species=get_pre_species(neighbors)
 test_data['t_index']=test_data.index
 
 compare_data=pd.merge(left=pre_species,right=pre_species,how='left',left_on='t_index',right_on='t_index')
-print compare_data['s_species_x']==compare_data['s_species_y']
+print ((compare_data['s_species_x']==compare_data['s_species_y']).sum())/float(len(compare_data))
 
 
 
