@@ -49,23 +49,16 @@ with open("iris.dot", 'w') as f:
 #可使用os的ulink()函数删除该文件
 # os.unlink("iris.dot")
 
-#绘制决策树图形
+#绘制决策树图形导出为pdf格式
 from sklearn.externals.six import StringIO
 import pydot
-from IPython.display import Image
+
 
 dot_data = StringIO()
-tree.export_graphviz(dec_tree, out_file=dot_data,
-                         feature_names=data.feature_names,
-                         class_names=data.target_names,
-                         filled=True, rounded=True,
-                         special_characters=True)
+tree.export_graphviz(clf, out_file=dot_data,feature_names=data['feature_names'],class_names=data['target_names'])
+print dot_data.getvalue()
 graph = pydot.graph_from_dot_data(dot_data.getvalue())
-print graph
-
-edg = [(1,2), (1,3), (1,4) , (3,4)]
-g=pydot.graph_from_edges(edg)
-g.write_jpeg('graph.jpg', prog = 'dot')
+graph.write_pdf("iris.pdf")
 
 
-print os.environ['graphviz']
+print dir(pydot)
