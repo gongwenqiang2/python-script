@@ -77,3 +77,4 @@ dec_tree2=clf2.fit(train_f,train_t)
 pre_t2=dec_tree2.predict(test_f)
 pre_score=metrics.precision_score(test_t,pre_t2)
 print pre_score
+print dec_tree2.get_params()
